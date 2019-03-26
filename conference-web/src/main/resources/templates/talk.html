@@ -1,0 +1,35 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<body>
+<div layout:fragment="content">
+    <div class="panel panel-primary" th:with="noReviews=${#lists.isEmpty(talk.reviews)}">
+        <div class="panel-heading">
+            <h3 class="panel-title"
+                th:utext="${talk.title + ' - ' + talk.speaker}">Talk title - speaker</h3>
+        </div>
+        <div class="panel-body" th:utext="${talk.summary}">Talk summary</div>
+        <div class="panel-footer" th:if="${noReviews}">
+            Currently no reviews are available for this talk.
+        </div>
+        <table class="table" th:unless="${noReviews}">
+            <thead>
+                <tr>
+                    <th>Reviewer</th>
+                    <th>Score</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="review: ${talk.reviews}">
+                    <td th:text="${review.reviewer}">Joris</td>
+                    <td th:text="${review.score}">1</td>
+                    <td th:text="${review.comments}">*shrug* yet another microservices talk...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

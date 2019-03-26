@@ -1,0 +1,15 @@
+server:
+  port: 8882
+
+management.endpoints.web.exposure.include: "*"
+
+# some examples of what you can configure in addition to the auto-defined routes
+zuul:
+  routes:
+    # alternative mapping to named service:
+    talk-service:
+      path: /alt-talks/**
+    # direct absolute URL mapping:
+    direct:
+      path: /direct-talks/**
+      url: http://localhost:8881/

@@ -1,0 +1,57 @@
+[
+	{
+		"key": "config/",
+		"flags": 0,
+		"value": ""
+	},
+	{
+		"key": "config/application/",
+		"flags": 0,
+		"value": ""
+	},
+	{
+		"key": "config/application/logging.pattern.console",
+		"flags": 0,
+		"value": "JWNsciglZHtISDptbTpzcy5TU1N9KXtmYWludH0gJWNscigke0xPR19MRVZFTF9QQVRURVJOOi0lNXB9KSAlY2xyKCR7UElEOi0gfSl7bWFnZW50YX0gJWNscihbJTE1LjE1dF0pe2ZhaW50fSAlY2xyKCUtMjUuMjVsb2dnZXJ7MjR9KXtjeWFufSAlY2xyKDope2ZhaW50fSAlbSVuJHtMT0dfRVhDRVBUSU9OX0NPTlZFUlNJT05fV09SRDold0V4fQ=="
+	},
+	{
+		"key": "config/review-generator/",
+		"flags": 0,
+		"value": ""
+	},
+	{
+		"key": "config/review-generator/spring.cloud.stream.bindings.output.contentType",
+		"flags": 0,
+		"value": "YXBwbGljYXRpb24vanNvbg=="
+	},
+	{
+		"key": "config/review-generator/spring.cloud.stream.bindings.output.destination",
+		"flags": 0,
+		"value": "cmV2aWV3cw=="
+	},
+	{
+		"key": "config/review-service/",
+		"flags": 0,
+		"value": ""
+	},
+	{
+		"key": "config/review-service/spring.cloud.stream.bindings.input.destination",
+		"flags": 0,
+		"value": "cmV2aWV3cw=="
+	},
+	{
+		"key": "config/review-service/spring.cloud.stream.bindings.input.group",
+		"flags": 0,
+		"value": "cmV2aWV3LXNlcnZpY2U="
+	},
+	{
+		"key": "config/talk-service/",
+		"flags": 0,
+		"value": ""
+	},
+	{
+		"key": "config/talk-service/logging.level.talk",
+		"flags": 0,
+		"value": "aW5mbw=="
+	}
+]
