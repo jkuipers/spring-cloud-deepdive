@@ -21,7 +21,7 @@ about the messaging parts, simply do not start the `ReviewApp` and skip the last
 After that, you can start the `TalkApp` application. It should get its configuration from Consul
 and register itself as the `talk-service` with Consul: you can check this in the [Consul UI](http://localhost:8500/ui).
 
-You can also look at the service's [/actuator/env](http://localhost:8881/actuator/env) endpoint to see that there are
+You can also look at the service's [/env](http://localhost:8881/env) endpoint to see that there are
 two Consul-based property-sources: one for all applications, and one specifically for the service.
 
 Try changing a value and then notice how the change will be picked up by the service by checking its console logging.
@@ -55,7 +55,7 @@ You can see for yourself if the application is using the service output or the f
 
 ## Hystrix dashboard and bulk heading support
 
-Now start the `HystrixDashboardApp` application and navigate to [http://localhost:9000/hystrix/monitor?stream=http%3A%2F%2Flocalhost%3A8080%2Factuator%2Fhystrix.stream]().
+Now start the `HystrixDashboardApp` application and navigate to [http://localhost:9000/hystrix/monitor?stream=http%3A%2F%2Flocalhost%3A8080%2Fhystrix.stream]().
 This will show you the state of the two circuitbreakers and their thread pools present in the Conference application.
 
 To create some load on the application, you can use [Apache Bench](https://httpd.apache.org/docs/2.4/programs/ab.html), which is included
@@ -94,3 +94,8 @@ You can stop the generator after it has published several reviews, and then see 
 
 If you have enabled the [management plugin](https://www.rabbitmq.com/management.html) in RabbitMQ, you can use it to browse the
 exchange and queue that were created from the bindings by Spring Cloud Stream. 
+
+### Spring Cloud Sleuth
+
+Sleuth is enabled already, as showcased by the trace- and span-IDs that appear in the logs. In addition, traces are exported to Zipkin. You can start up Zipkin locally using Docker like this:
+`docker run --name zipkin -d -p 9411:9411 openzipkin/zipkin`. If you don't want to export traces to Zipkin, you can simply replace the dependencies in the Maven POMs (they're alreay there, commented out). 
